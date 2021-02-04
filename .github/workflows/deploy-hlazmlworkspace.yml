@@ -1,0 +1,42 @@
+# Actions train a model on Azure Machine Learning
+name: aml-deploy-workflow 
+on:
+  push:
+    branches:
+      - master
+    # paths:
+    #   - './*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Python 3.8
+      id: python_setup
+      uses: actions/setup-python@v1
+      with:
+        python-version: "3.8"
+    # checks out repository
+    - name: Check out repository
+      id: checkout_repository
+      uses: actions/checkout@v2
+    # Workspace Action
+    - name: Workspace action
+      uses: Azure/aml-workspace@v1
+      id: aml_workspace
+      with:
+        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}  
+    # compute cluster
+    - name: compute cluster
+      id: compute_cluster
+      uses: Azure/aml-compute@v1
+      with:
+        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+    # Deploy model in Azure Machine Learning to ACI
+    - name: run .ipynb
+      id: run_ipynb
+      uses: Azure/aml-run@v1
+      with:
+        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        # should be named run.json in .cloud/.azure/
+        # note: https://github.com/Azure/aml-run
+        parameters_file: "run.json"
