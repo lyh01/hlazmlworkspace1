@@ -20,13 +20,11 @@ def main():
    pp(o2.decode("utf-8"))
    o1,o2,o3 = oscmd.osCmdRun(["python","-m","pip","list"])
    pp(o2.decode("utf-8"))
-   o1,o2,o3 = oscmd.osCmdRun(["netstat","-pantu"])
-   pp(o2.decode("utf-8"))
 
    with open("01.run-experiment.ipynb","r") as fp:
       nb = nbformat.read(fp, as_version=4)
-   ep = ExecutePreprocessor(timeout=600, kernel_name="Python 3.7 - AzureML")
-   ep.preprocess(nb, {"metadata": {"path":"notebooks/"}})
+   ep = ExecutePreprocessor(timeout=600, kernel_name="python3"
+   ep.preprocess(nb, {"metadata": {"path":"./"}})
 
 if __name__ == "__main__":
    main()
