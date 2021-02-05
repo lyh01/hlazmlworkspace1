@@ -5,6 +5,11 @@ __pycache__/
 
 # azure ml 
 *.amltmp
+compute.json
+environment.*
+run.json
+workspace.json
+deploy-hlazmlworkspace.yml
 
 # personal
 *.zip
