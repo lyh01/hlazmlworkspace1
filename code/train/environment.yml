@@ -3,3 +3,4 @@ dependencies:
    - python=3.7
    - pip:
      - azureml-defaults==1.19.0
+     - nbformat==5.0.7
