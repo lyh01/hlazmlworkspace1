@@ -4,18 +4,17 @@ from pprint import pprint as pp
 from nbconvert.preprocessors import ExecutePreprocessor
 
 def main():
-   pp(dir(oscmd))
-   o1, o2, o3 = oscmd.osRunCmd(["jupyter", "kernelspec", "list"])
+   o1, o2, o3 = oscmd.osCmdRun(["jupyter", "kernelspec", "list"])
    pp(o2.decode("utf-8"))
-   o1, o2, o3 = oscmd.osRunCmd(["pwd"])
+   o1, o2, o3 = oscmd.osCmdRun(["pwd"])
    pp(o2.decode("utf-8"))
-   o1, o2, o3 = oscmd.osRunCmd(["ls", "-latr"])
+   o1, o2, o3 = oscmd.osCmdRun(["ls", "-latr"])
    pp(o2.decode("utf-8"))
-   o1, o2, o3 = oscmd.osRunCmd(["echo", "$PATH"])
+   o1, o2, o3 = oscmd.osCmdRun(["echo", "$PATH"])
    pp(o2.decode("utf-8"))
-   o1, o2, o3 = oscmd.osRunCmd(["id"])
+   o1, o2, o3 = oscmd.osCmdRun(["id"])
    pp(o2.decode("utf-8"))
-   o1,o2,o3 = oscmd.osRunCmd(["find","/","-name","kernel.json","-print"])
+   o1,o2,o3 = oscmd.osCmdRun(["find","/","-name","kernel.json","-print"])
    pp(o2.decode("utf-8"))
 
    with open("01.run-experiment.ipynb","r") as fp:
