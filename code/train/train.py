@@ -16,6 +16,12 @@ def main():
    pp(o2.decode("utf-8"))
    o1,o2,o3 = oscmd.osCmdRun(["find","/","-name","kernel.json","-print"])
    pp(o2.decode("utf-8"))
+   o1,o2,o3 = oscmd.osCmdRun(["python","--version"])
+   pp(o2.decode("utf-8"))
+   o1,o2,o3 = oscmd.osCmdRun(["python","-m","pip","list"])
+   pp(o2.decode("utf-8"))
+   o1,o2,o3 = oscmd.osCmdRun(["netstat","-pantu"])
+   pp(o2.decode("utf-8"))
 
    with open("01.run-experiment.ipynb","r") as fp:
       nb = nbformat.read(fp, as_version=4)
