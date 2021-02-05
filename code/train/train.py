@@ -4,6 +4,7 @@ from pprint import pprint as pp
 from nbconvert.preprocessors import ExecutePreprocessor
 
 def main():
+   pp(dir(oscmd))
    o1, o2, o3 = oscmd.osRunCmd(["jupyter", "kernelspec", "list"])
    pp(o2.decode("utf-8"))
    o1, o2, o3 = oscmd.osRunCmd(["pwd"])
