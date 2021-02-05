@@ -1,6 +1,6 @@
 import nbformat
 import oscmd
-from pprint import pprint a pp
+from pprint import pprint as pp
 from nbconvert.preprocessors import ExecutePreprocessor
 
 def main():
