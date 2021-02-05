@@ -32,7 +32,7 @@ jobs:
       with:
         azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
     # Deploy model in Azure Machine Learning to ACI
-    - name: run .ipynb
+    - name: run .ipynb with ScriptRunConfig
       id: run_ipynb
       uses: Azure/aml-run@v1
       with:
