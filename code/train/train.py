@@ -10,8 +10,6 @@ def main():
    pp(o2.decode("utf-8"))
    o1, o2, o3 = oscmd.osCmdRun(["ls", "-latr"])
    pp(o2.decode("utf-8"))
-   o1, o2, o3 = oscmd.osCmdRun(["ls", "../", "-latr"])
-   pp(o2.decode("utf-8"))
    o1, o2, o3 = oscmd.osCmdRun(["echo", "$PATH"])
    pp(o2.decode("utf-8"))
    o1, o2, o3 = oscmd.osCmdRun(["id"])
