@@ -9,7 +9,6 @@ def main(workspace):
 
     """
     logging.info(f"run_config")
-    script_run_config = ScriptRunConfig(
+    return ScriptRunConfig(
          source_directory=".", script="train.py", compute_target="amlcompute3"
          )
-    return script_run_config
